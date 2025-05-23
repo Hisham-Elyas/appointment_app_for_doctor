@@ -1,0 +1,90 @@
+{
+  "project_info": {
+    "project_number": "891778128604",
+    "project_id": "medics-city",
+    "storage_bucket": "medics-city.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:891778128604:android:6bf8c730bcea62af2c7219",
+        "android_client_info": {
+          "package_name": "com.doctor.appointment"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "891778128604-abn5e9qpluqn431o454ig8l4r3sl77qk.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDKtTJFt5BT2FuU11p61mhWJYr3ZeBmUDo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "891778128604-abn5e9qpluqn431o454ig8l4r3sl77qk.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "891778128604-bf5vdo47k1ndtm7du239uccu2rfsqdlp.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.appointmentApp"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:891778128604:android:0144752ee9c861582c7219",
+        "android_client_info": {
+          "package_name": "com.example.cuer_city"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "891778128604-ahurm5nk4v8kd21ml4dk33d8ap5s3h9v.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.cuer_city",
+            "certificate_hash": "df3781cf90fc66c09ecf3ef6cea825f68625c280"
+          }
+        },
+        {
+          "client_id": "891778128604-abn5e9qpluqn431o454ig8l4r3sl77qk.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDKtTJFt5BT2FuU11p61mhWJYr3ZeBmUDo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "891778128604-abn5e9qpluqn431o454ig8l4r3sl77qk.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "891778128604-bf5vdo47k1ndtm7du239uccu2rfsqdlp.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.appointmentApp"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
