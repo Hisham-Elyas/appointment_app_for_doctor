@@ -27,7 +27,6 @@ class HandlingDataView extends StatelessWidget {
   Widget build(BuildContext context) {
     if (statusReq == StatusRequest.loading) {
       return Stack(
-        
         alignment: Alignment.center,
         children: [
           SvgPicture.asset(

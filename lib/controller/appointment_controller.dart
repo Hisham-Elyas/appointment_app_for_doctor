@@ -1,10 +1,10 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:cuer_city/core/functions/ckeck_internet.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import '../core/class/enums.dart';
 import '../core/constant/string.dart';
+import '../core/functions/ckeck_internet.dart';
 import '../data/model/apointment_model.dart';
 import '../data/repositories/appointment_repo.dart';
 import 'user_controller.dart';

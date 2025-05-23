@@ -58,7 +58,7 @@ class UserModel {
 
   Map<String, dynamic> toMap() {
     return <String, dynamic>{
-      'userId': userId,
+      'id': userId,
       'email': email,
       'phone': phone,
       'name': name,

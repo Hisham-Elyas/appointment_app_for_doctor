@@ -1,8 +1,8 @@
-import 'package:cuer_city/core/constant/routes.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import '../../../controller/appointment_controller.dart';
+import '../../../core/constant/routes.dart';
 import '../../../data/repositories/auth_repo.dart';
 
 class HomeScreen extends StatelessWidget {
