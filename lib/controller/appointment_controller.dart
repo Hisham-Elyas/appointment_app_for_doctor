@@ -1,4 +1,5 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -36,15 +37,18 @@ class ApointmentController extends GetxController {
 
     statusReq = StatusRequest.loading;
     update();
-
+    late final String userId = FirebaseAuth.instance.currentUser!.uid;
     FirebaseFirestore.instance
         .collection('appointments')
-        .where('doctorId', isEqualTo: userController.userInf.userId!)
+        .where('doctorId', isEqualTo: userId)
         .snapshots()
         .listen(
       (snapshot) {
         try {
           final appointments = snapshot.docs.map((doc) {
+            if (doc.data().isEmpty) {
+              print("Document is empty");
+            }
             final data = doc.data();
             return Appointment.fromMap({...data}, id: doc.id);
           }).toList();
@@ -57,11 +61,13 @@ class ApointmentController extends GetxController {
           statusReq = StatusRequest.success;
           update();
         } catch (e) {
+          print("Error parsing appointments: $e");
           statusReq = StatusRequest.serverFailure;
           update();
         }
       },
       onError: (error) {
+        print("Error fetching appointments: $error");
         statusReq = StatusRequest.serverFailure;
         update();
       },
