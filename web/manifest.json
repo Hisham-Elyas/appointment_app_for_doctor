@@ -1,6 +1,6 @@
 {
-    "name": "cuer_city",
-    "short_name": "cuer_city",
+    "name": "doctor_appointment",
+    "short_name": "doctor_appointment",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",
