@@ -10,8 +10,10 @@ import '../../../../core/class/enums.dart';
 import '../../../../core/class/handling_data_view.dart';
 import '../../../../core/constant/app_color.dart';
 import '../../../../core/constant/string.dart';
+import '../../../../data/model/doctor_model.dart';
 import '../../../../data/model/message_history_model.dart';
 import '../../../widget/custom_app_bar.dart';
+import 'chats_screen.dart';
 
 class MessageHistoryScreen extends GetView<ChatsController> {
   const MessageHistoryScreen({super.key});
@@ -89,6 +91,14 @@ class MessageHistoryScreen extends GetView<ChatsController> {
                                         // Get.toNamed(
                                         //     AppRoutes.getChatsScreenScreen(
                                         //         snapshot.data![index].doctor!));
+                                        Get.to(() => ChatsScreen(
+                                              doctor: Doctor(
+                                                id: snapshot
+                                                    .data![index].senderId,
+                                                name: snapshot
+                                                    .data![index].senderName,
+                                              ),
+                                            ));
                                       },
                                     ));
                           }
@@ -185,7 +195,7 @@ class MessageHistoryWidget extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Text(messageHistoryInUser.receiverName ?? '',
+                Text(messageHistoryInUser.senderName ?? '',
                     style: TextStyle(
                       color: Theme.of(context).textTheme.displayLarge!.color,
                       fontSize: 16.sp,

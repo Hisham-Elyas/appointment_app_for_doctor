@@ -4,16 +4,20 @@ import 'dart:convert';
 
 import 'package:cloud_firestore/cloud_firestore.dart';
 
-import '../dataSoureces/remoteDataSource/chats_remotdata.dart';
+import 'user_model.dart';
 
 class MessageHistoryInUser {
   final String? lastMessage;
   final String? receiverId;
   final String? receiverName;
+  final String? senderName;
+  final String? senderId;
   final UserModel? doctor;
   final Timestamp? timestamp;
 
   MessageHistoryInUser({
+    required this.senderName,
+    required this.senderId,
     this.lastMessage,
     this.receiverId,
     this.receiverName,
@@ -24,11 +28,15 @@ class MessageHistoryInUser {
   MessageHistoryInUser copyWith({
     String? lastMessage,
     String? receiverId,
+    String? senderId,
     String? receiverName,
+    String? senderName,
     UserModel? doctor,
     Timestamp? timestamp,
   }) {
     return MessageHistoryInUser(
+      senderName: senderName ?? senderName,
+      senderId: senderId ?? senderId,
       lastMessage: lastMessage ?? this.lastMessage,
       receiverId: receiverId ?? this.receiverId,
       receiverName: receiverName ?? this.receiverName,
@@ -45,6 +53,9 @@ class MessageHistoryInUser {
           map['receiverId'] != null ? map['receiverId'] as String : null,
       receiverName:
           map['receiverName'] != null ? map['receiverName'] as String : null,
+      senderName:
+          map['senderName'] != null ? map['senderName'] as String : null,
+      senderId: map['senderId'] != null ? map['senderId'] as String : null,
       doctor: map['doctor'] != null
           ? UserModel.fromMap(map['doctor'] as Map<String, dynamic>)
           : null,
@@ -65,6 +76,8 @@ class MessageHistoryInUser {
     return other.lastMessage == lastMessage &&
         other.receiverId == receiverId &&
         other.receiverName == receiverName &&
+        other.senderId == senderId &&
+        other.senderName == senderName &&
         other.doctor == doctor &&
         other.timestamp == timestamp;
   }
@@ -74,6 +87,8 @@ class MessageHistoryInUser {
     return lastMessage.hashCode ^
         receiverId.hashCode ^
         receiverName.hashCode ^
+        senderName.hashCode ^
+        senderId.hashCode ^
         doctor.hashCode ^
         timestamp.hashCode;
   }
@@ -82,7 +97,9 @@ class MessageHistoryInUser {
     return <String, dynamic>{
       'lastMessage': lastMessage,
       'receiverId': receiverId,
+      'senderId': senderId,
       'receiverName': receiverName,
+      'senderName': senderName,
       'doctor': doctor?.toMap(),
       'timestamp': timestamp,
     };

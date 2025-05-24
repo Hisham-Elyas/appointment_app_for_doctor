@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
-
 import 'package:jiffy/jiffy.dart';
 
 import '../../../../controller/chats_controller.dart';
@@ -10,7 +9,6 @@ import '../../../../core/class/enums.dart';
 import '../../../../core/class/handling_data_view.dart';
 import '../../../../core/constant/app_color.dart';
 import '../../../../core/constant/image_asset.dart';
-import '../../../../core/constant/routes.dart';
 import '../../../../core/constant/string.dart';
 import '../../../../data/model/doctor_model.dart';
 import '../../../../data/model/message_model.dart';
@@ -29,10 +27,10 @@ class ChatsScreen extends GetView<ChatsController> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: CustomAppBar(
-        title: 'Dr. ${doctor.name}',
-        onTapTitle: () {
-          Get.toNamed(AppRoutes.getDoctorDetailScrren(doctor));
-        },
+        title: '${doctor.name}',
+        // onTapTitle: () {
+        //   // Get.toNamed(AppRoutes.getDoctorDetailScrren(doctor));
+        // },
         actions: [
           Padding(
             padding: EdgeInsetsDirectional.only(
